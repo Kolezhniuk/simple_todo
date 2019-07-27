@@ -1,0 +1,48 @@
+p {
+    font-family: Lato;
+  }
+  .example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .example-card {
+    max-width: 400px;
+  }
+  
+  
+  .image-todo {
+    background-image: url('https://cdn.iconscout.com/icon/premium/png-256-thumb/todo-list-6-609264.png');
+    background-size: cover;
+  }
+  .image-done {
+    background-image: url('http://icons.iconarchive.com/icons/icons8/windows-8/256/Very-Basic-Checkmark-icon.png');
+    background-size: cover;
+  }
+  .mat-card{
+      margin: 20px;
+      width: 450px;
+      border: 2px solid black !important
+  }
+.mat-toolbar {
+    background-color : transparent;
+    font-size: 32px;
+    font-weight: bold;
+}
+.example-container button {
+    &:disabled{
+        border: 2px solid rgba(0,0,0,.54) !important
+    }
+    border: 2px solid black !important
+}

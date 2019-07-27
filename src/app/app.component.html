@@ -1,0 +1,55 @@
+<mat-toolbar>
+	<mat-toolbar-row>
+		<span>To Do List</span>
+	</mat-toolbar-row>
+</mat-toolbar>
+<div fxLayout="row" fxLayoutAlign="center center">
+	<mat-card>
+		<div class="example-container">
+			<mat-form-field appearance="outline">
+				<mat-label>Input a task</mat-label>
+				<input matInput placeholder="Placeholder" [(ngModel)]="title" required>
+				<mat-icon matSuffix>edit</mat-icon>
+			</mat-form-field>
+			<button mat-stroked-button [disabled]="!(title)" (click)="addTask()">Add Task</button>
+		</div>
+	</mat-card>
+</div>
+
+<div>
+	<mat-card class="example-card" fxFlex="50%">
+		<mat-card-header>
+			<div mat-card-avatar class="image-todo"></div>
+			<mat-card-title>To Do</mat-card-title>
+			<mat-card-subtitle>Planned tasks</mat-card-subtitle>
+		</mat-card-header>
+		<mat-divider></mat-divider>
+		<mat-card-content>
+			<mat-list>
+				<mat-list-item *ngFor="let todo of UnCompleted">
+					<div matLine> {{todo.title}} </div>
+					<button mat-icon-button (click)="markCompleted(todo)">
+						<mat-icon>crop_square</mat-icon>
+					</button>
+				</mat-list-item>
+			</mat-list>
+		</mat-card-content>
+	</mat-card>
+	<mat-card class="example-card" fxFlex="50%">
+		<mat-card-header>
+			<div mat-card-avatar class="image-done"></div>
+			<mat-card-title>Done</mat-card-title>
+			<mat-card-subtitle>Finished tasks</mat-card-subtitle>
+		</mat-card-header>
+		<mat-divider></mat-divider>
+		<mat-card-content>
+			<mat-list>
+				<mat-list-item *ngFor="let todo of Completed">
+					<div matLine> {{todo.title}} </div>
+					<mat-icon>check_circle_outline</mat-icon>
+				</mat-list-item>
+			</mat-list>
+		</mat-card-content>
+	</mat-card>
+
+</div>
